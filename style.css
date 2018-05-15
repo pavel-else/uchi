@@ -1,6 +1,15 @@
 .container {
 	position: relative;
-	margin-top: 40px;
+	margin-top: 70px;
+}
+
+.caption {
+	text-align: center;
+	font-size: 32px;
+}
+.caption__input {
+	width: 50px;
+	font-size: 32px;
 }
 
 .arrow__wrapper {
@@ -14,6 +23,13 @@
 
 .arrow {
 	width: 38.5px;
-	height: 30px;
+	height: 60px;
+	box-sizing: border-box;
 	outline: 1px solid lightgray;
+}
+
+.arrow__input {
+	display: block;
+	width: 15px;
+	margin: 0 auto;
 }
