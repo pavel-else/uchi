@@ -1,0 +1,19 @@
+.container {
+	position: relative;
+	margin-top: 40px;
+}
+
+.arrow__wrapper {
+	position: relative;
+	outline: 1px solid gray;
+	width: 700px;
+	left: 55px;
+	bottom: -10px;
+	display: flex;
+}
+
+.arrow {
+	width: 38.5px;
+	height: 30px;
+	outline: 1px solid lightgray;
+}
