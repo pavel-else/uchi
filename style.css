@@ -33,13 +33,17 @@
 	left: 37px;
 	bottom: -10px;
 	display: flex;
+	align-items: flex-end;
 }
 
 .arrow {
 	width: 38.5px;
-	height: 100px;
+
 	box-sizing: border-box;
-	outline: 1px solid lightgray;
+	display: flex;
+	flex-direction: column;
+}
+.arrowB {
 }
 
 .arrow__input {

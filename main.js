@@ -2,6 +2,7 @@ new Vue({
 		el: '#app',
   	data: {
     	l: 38.85,
+      focus: false,
 
       arrows: {
         a: {
@@ -26,7 +27,6 @@ new Vue({
           focus: false,
           disabled: false,
           value: '?',
-          focus: true,
         }
       }
   	},
@@ -34,7 +34,6 @@ new Vue({
   		initial(){
 	  		// init a, b
 	  		// a [6,9], a+b[11,14]
-
 
 	  		this.arrows.a.value = Math.floor(Math.random() * 4 + 6);
         this.arrows.b.value = Math.floor(Math.random() * 4 + (11 - this.arrows.a.value)); 
@@ -49,11 +48,11 @@ new Vue({
   			if (val == this.arrows.a.value) {
           this.arrows.a.inputError = false;
           this.arrows.a.inputBlock = true;
+          this.arrows.a.focus = false;
           this.arrows.b.show = true;
           this.arrows.b.focus = true;
         } else {
           this.arrows.a.inputError = true;
-          this.arrows.a.focus = false;
           this.arrows.b.inputBlock = false;
   			}
   		},
@@ -65,7 +64,7 @@ new Vue({
 
           this.caption.result.value = '';
           this.caption.result.inputBlock = false;
-          this.caption.result.focus = true;
+          this.focus = true;
         } else {
           this.arrows.b.inputError = true;
           this.arrows.b.inputBlock = false;
@@ -76,7 +75,7 @@ new Vue({
   		this.initial();
   	},
   	mounted() {
-  		// console.log(this.arrowWidth1)
+  	 //console.log(this.caption)
   	},
     directives: {
       focus: {

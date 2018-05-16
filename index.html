@@ -18,11 +18,12 @@
 				 = 
 				<input class="caption__input"
 					:class="{captionInput__block: caption.result.inputBlock}"
-					:disabled="caption.result.disabled" type="text" 
+					:disabled="caption.result.disabled"
 					:value="caption.result.value"
 					v-focus="{active: caption.result.focus}"
 					>
 			</h2>
+
 
 			<div class="arrow__wrapper">
 				<div class="arrow arrowA" :style="{ width: arrows.a.width + 'px'}">
@@ -32,6 +33,7 @@
 						:class="{arrowInputError: arrows.a.inputError, arrowInputBlock: arrows.a.inputBlock}"
 						:disabled="arrows.a.inputBlock"
 						>
+					<img src="img/arrow.svg" width="100%">
 				</div>
 
 				<div class="arrow arrowB" 
@@ -44,6 +46,7 @@
 						:disabled="arrows.b.inputBlock"
 						v-focus="{active: arrows.b.focus}"
 						>
+					<img src="img/arrow.svg" width="100%">
 				</div>
 			</div>
 			<img src="img/sprite.png" class="ruler" width="875" height="83"></img>
