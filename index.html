@@ -14,14 +14,16 @@
 				 + 
 				<span class="caption__var caption__var--b">{{ b }}</span>
 				 = 
-				<input class="caption__input" type="text" value="?">
+				<input class="caption__input" :class="{captionInput__block: !step3 }" :disabled="!step3" type="text" :value="step3 ? '' : '?'">
 			</h2>
+
 			<div class="arrow__wrapper">
 				<div class="arrow arrow--first" :style="{ width: arrowWidth1 + 'px'}">
-					<input class="arrow__input arrow__input--a"></input>
+					<input class="arrow__input arrow__input--a" @input="arrowInputA($event.target.value)"></input>
 				</div>
-				<div class="arrow arrow--sececond" :style="{ width: arrowWidth2 + 'px'}">
-					<input class="arrow__input arrow__input--b"></input>
+
+				<div class="arrow arrow--sececond" :style="{ width: arrowWidth2 + 'px'}" v-if="step2">
+					<input class="arrow__input arrow__input--b" @input="arrowInputB($event.target.value)"></input>
 				</div>
 			</div>
 			<img src="img/sprite.png" class="ruler" width="875" height="83"></img>

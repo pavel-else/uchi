@@ -13,13 +13,19 @@
 	font-size: 32px;
 }
 .caption__input {
-	width: 50px;
+	width: 40px;
 	font-size: 32px;
 }
 
+.captionInput__block {	
+	border: none;
+	background-color: transparent;
+	color: black;
+}
+
+
 .arrow__wrapper {
 	position: relative;
-	outline: 1px solid gray;
 	width: 700px;
 	left: 37px;
 	bottom: -10px;
@@ -28,7 +34,7 @@
 
 .arrow {
 	width: 38.5px;
-	height: 60px;
+	height: 100px;
 	box-sizing: border-box;
 	outline: 1px solid lightgray;
 }
