@@ -7,6 +7,8 @@ new Vue({
     	l: 38.85,
     	arrowWidth1: 0,
     	arrowWidth2: 0,
+    	arrowInputErrorA: false,
+    	arrowInputErrorB: false,
 
     	step1: true,
     	step2: false,
@@ -26,12 +28,18 @@ new Vue({
   		arrowInputA(val) {
   			if (val == this.a) {
   				this.step1 = false;
-  				this.step2 = true
+  				this.step2 = true;
+  				this.arrowInputErrorA = false;
+  			} else {
+  				this.arrowInputErrorA = true;
   			}
   		},
   		arrowInputB(val) {
   			if (val == this.b) {
    				this.step3 = true;
+   				this.arrowInputErrorB = false;
+  			} else {
+  				this.arrowInputErrorB = true;
   			}
   		}
 

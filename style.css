@@ -22,6 +22,9 @@
 	background-color: transparent;
 	color: black;
 }
+.captionVarError {
+	background-color: yellow;
+}
 
 
 .arrow__wrapper {
@@ -42,5 +45,9 @@
 .arrow__input {
 	display: block;
 	width: 15px;
+	font-size: 24px;
 	margin: 0 auto;
+}
+.arrowInputError {
+	color: red;
 }
