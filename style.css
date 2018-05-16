@@ -1,3 +1,7 @@
+body {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+}
 .container {
 	position: relative;
 	margin: 70px auto 0;
@@ -11,13 +15,21 @@
 .caption {
 	text-align: center;
 	font-size: 32px;
+	line-height: 40px;
+	min-height: 50px;
 }
 .caption__input {
 	width: 40px;
 	font-size: 32px;
+	font-weight: bold;
+	color: black;
+	box-sizing: border-box;
+}
+.caption__input_error {
+	color: red;
 }
 
-.captionInput__block {	
+.caption__input_block {	
 	border: none;
 	background-color: transparent;
 	color: black;
@@ -30,6 +42,7 @@
 .arrow__wrapper {
 	position: relative;
 	width: 700px;
+	min-height: 120px;
 	left: 37px;
 	bottom: -10px;
 	display: flex;

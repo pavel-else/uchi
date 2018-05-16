@@ -2,7 +2,6 @@ new Vue({
 		el: '#app',
   	data: {
     	l: 38.85,
-      focus: false,
 
       arrows: {
         a: {
@@ -27,6 +26,8 @@ new Vue({
           focus: false,
           disabled: false,
           value: '?',
+          inputError: false,
+          inputBlock: true,
         }
       }
   	},
@@ -64,12 +65,26 @@ new Vue({
 
           this.caption.result.value = '';
           this.caption.result.inputBlock = false;
-          this.focus = true;
+          this.caption.result.disabled = false;
+          this.caption.result.focus = true;
+          document.getElementById("caption__input").focus();
         } else {
           this.arrows.b.inputError = true;
           this.arrows.b.inputBlock = false;
         }
-  		}
+  		},
+      checkResult(val) {
+        if (val == this.arrows.a.value + this.arrows.b.value) {
+          this.caption.result.inputError = false;
+          this.caption.result.value = val;
+          this.caption.result.disabled = true;
+          this.caption.result.inputBlock = true;
+
+        } else {
+          this.caption.result.value = val;
+          this.caption.result.inputError = true;
+        }
+      }
   	},
   	beforeMount() {
   		this.initial();

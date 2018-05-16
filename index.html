@@ -16,14 +16,14 @@
 				<span class="caption__var caption__var--b"
 					:class="{captionVarError: arrows.b.inputError}">{{ arrows.b.value }}</span>
 				 = 
-				<input class="caption__input"
-					:class="{captionInput__block: caption.result.inputBlock}"
+				<input class="caption__input" id="caption__input"
+					type="text"
+					:class="{caption__input_error: caption.result.inputError, caption__input_block: caption.result.inputBlock}"
 					:disabled="caption.result.disabled"
 					:value="caption.result.value"
-					v-focus="{active: caption.result.focus}"
+					@input="checkResult($event.target.value)"
 					>
 			</h2>
-
 
 			<div class="arrow__wrapper">
 				<div class="arrow arrowA" :style="{ width: arrows.a.width + 'px'}">
