@@ -51,3 +51,8 @@
 .arrowInputError {
 	color: red;
 }
+.arrowInputBlock {
+	background-color: transparent;
+	color: black;
+	border: none;
+}

@@ -11,30 +11,38 @@
 		<div class="container">
 			<h2 class="caption">
 				<span class="caption__var caption__var--a" 
-					:class="{captionVarError: arrowInputErrorA}">{{ a }}</span>
+					:class="{captionVarError: arrows.a.inputError}">{{ arrows.a.value }}</span>
 				 + 
 				<span class="caption__var caption__var--b"
-					:class="{captionVarError: arrowInputErrorB}">{{ b }}</span>
+					:class="{captionVarError: arrows.b.inputError}">{{ arrows.b.value }}</span>
 				 = 
-				<input class="caption__input" 
-					:class="{captionInput__block: !step3 }" 
-					:disabled="!step3" type="text" 
-					:value="step3 ? '' : '?'"
+				<input class="caption__input"
+					:class="{captionInput__block: caption.result.inputBlock}"
+					:disabled="caption.result.disabled" type="text" 
+					:value="caption.result.value"
+					v-focus="{active: caption.result.focus}"
 					>
 			</h2>
 
 			<div class="arrow__wrapper">
-				<div class="arrow arrow--first" :style="{ width: arrowWidth1 + 'px'}">
-					<input class="arrow__input arrow__input--a" 
+				<div class="arrow arrowA" :style="{ width: arrows.a.width + 'px'}">
+					<input class="arrow__input" 
+						v-focus="{active: arrows.a.focus}"
 						@input="arrowInputA($event.target.value)"
-						:class="{arrowInputError: arrowInputErrorA}"
+						:class="{arrowInputError: arrows.a.inputError, arrowInputBlock: arrows.a.inputBlock}"
+						:disabled="arrows.a.inputBlock"
 						>
 				</div>
 
-				<div class="arrow arrow--sececond" :style="{ width: arrowWidth2 + 'px'}" v-if="step2">
-					<input class="arrow__input arrow__input--b" 
+				<div class="arrow arrowB" 
+					:style="{ width: arrows.b.width + 'px'}" 
+					v-if="arrows.b.show"
+					>
+					<input class="arrow__input"
 						@input="arrowInputB($event.target.value)"
-						:class="{arrowInputError: arrowInputErrorB}"
+						:class="{arrowInputError: arrows.b.inputError, arrowInputBlock: arrows.b.inputBlock}"
+						:disabled="arrows.b.inputBlock"
+						v-focus="{active: arrows.b.focus}"
 						>
 				</div>
 			</div>
