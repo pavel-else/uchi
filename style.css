@@ -1,6 +1,11 @@
 .container {
 	position: relative;
-	margin-top: 70px;
+	margin: 70px auto 0;
+	width: 960px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+
 }
 
 .caption {
@@ -16,7 +21,7 @@
 	position: relative;
 	outline: 1px solid gray;
 	width: 700px;
-	left: 55px;
+	left: 37px;
 	bottom: -10px;
 	display: flex;
 }

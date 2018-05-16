@@ -4,7 +4,7 @@ new Vue({
     	a: '333',
     	b: '',
 
-    	l: 38.5,
+    	l: 38.85,
     	arrowWidth1: 0,
     	arrowWidth2: 0
   	},
